@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+
+    <!-- Internal CSS -->
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f4f9ff;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background: #0d6efd;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        /* Hover effect for navigation */
+        nav ul li a:hover {
+            color: #dbeafe;
+        }
+
+        /* General section styling */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* Home Section */
+        .home {
+            background: white;
+        }
+
+        .home img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Button styling */
+        button {
+            background: #0d6efd;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Hover effect for buttons */
+        button:hover {
+            background: #084298;
+        }
+
+        /* Courses Section */
+        .course-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .course {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Form */
+        form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .course-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Bright Future School</h1>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <h2>Welcome to Bright Future School</h2>
+        <p>We provide quality education and help students build a bright future.</p>
+
+        <!-- Banner Image -->
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7" alt="School Banner">
+
+        <!-- Interactive Button -->
+        <br>
+        <button onclick="showWelcomeMessage()">Click Me</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Our School</h2>
+        <p>
+            Bright Future School is dedicated to providing excellent education,
+            discipline, and personal growth for students. Our mission is to
+            prepare students for success in academics and life.
+        </p>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <h2>Our Courses</h2>
+
+        <div class="course-list">
+            <div class="course">
+                <h3>Mathematics</h3>
+                <p>Learn algebra, geometry, and problem-solving skills.</p>
+            </div>
+
+            <div class="course">
+                <h3>Science</h3>
+                <p>Explore physics, chemistry, and biology concepts.</p>
+            </div>
+
+            <div class="course">
+                <h3>Computer Basics</h3>
+                <p>Understand computers, internet, and basic programming.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+
+        <!-- Contact Form -->
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Enter your name">
+            <input type="email" id="email" placeholder="Enter your email">
+            <textarea id="message" placeholder="Enter your message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Bright Future School. All Rights Reserved.</p>
+    </footer>
+
+
+    <!-- Internal JavaScript -->
+    <script>
+        // Function for interactive welcome button
+        function showWelcomeMessage() {
+            alert("Welcome to our school!");
+        }
+
+        // Contact form validation
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting automatically
+
+            // Get input values
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            // Simple email pattern check
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Validation checks
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Success message
+            alert("Form submitted successfully!");
+
+            // Reset form after successful submission
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+
+</body>
+</html>
